@@ -15,8 +15,4 @@ public class FinderCoincidence implements StringWorker {
         }
         return numberFirstCoincidence;
     }
-
-    public int getNumberFirstCoincidence() {
-        return numberFirstCoincidence;
-    }
 }

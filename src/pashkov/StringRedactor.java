@@ -2,8 +2,7 @@ package pashkov;
 
 public class StringRedactor implements StringWorker {
 
-    private int stringLength;
-    private StringBuilder builder = new StringBuilder();
+    private final StringBuilder builder = new StringBuilder();
 
     @Override
     public int execute(String sentence, String word) {
@@ -16,11 +15,6 @@ public class StringRedactor implements StringWorker {
             }
         }
         char[] charsSentence = builder.toString().toCharArray();
-        stringLength = charsSentence.length - 1;
-        return stringLength;
-    }
-
-    public int getStringLength() {
-        return stringLength;
+        return charsSentence.length - 1;
     }
 }

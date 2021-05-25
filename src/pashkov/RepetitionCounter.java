@@ -14,8 +14,4 @@ public class RepetitionCounter implements StringWorker {
         }
         return matchesCount;
     }
-
-    public int getMatchesCount() {
-        return matchesCount;
-    }
 }
