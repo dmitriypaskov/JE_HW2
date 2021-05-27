@@ -1,18 +1,18 @@
 package pashkov;
 
-public class FinderCoincidence implements StringWorker {
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-    private int numberFirstCoincidence;
+public class FinderCoincidence implements StringWorker {
 
     @Override
     public int execute(String sentence, String word) {
-        String[] words = sentence.split("\\s");
-        for (int i = 0; i < words.length; i++) {
-            if (word.equals(words[i])) {
-                numberFirstCoincidence = i;
-                break;
-            }
+        Pattern pattern = Pattern.compile("\\b" + word + "\\b");
+        Matcher matcher = pattern.matcher(sentence);
+        if (matcher.find()) {
+            return matcher.start();
+        } else {
+            return -1;
         }
-        return numberFirstCoincidence;
     }
 }
